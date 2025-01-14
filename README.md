@@ -15,6 +15,10 @@ Log in to the AWS server, the easiest way is using EC2 Instance Connect in the b
 First we need to get the code onto the server  
 `git clone https://github.com/mindfulcoder49/internship.git`
 
+### change into the cloned directory
+We need to be inside the project directory to run docker compose
+`cd internship`
+
 ### install docker
 Then we need to install docker  
 `sudo snap install docker`
@@ -23,6 +27,10 @@ Then we need to install docker
 Then we need to build and run the docker container which will set up our app to run on
 port 8000  
 `sudo docker compose up --build -d`
+
+### update the package lists
+We need to update the package manager information to install certbot
+`sudo apt update`
 
 ### install certbot
 Then we need to install certbot which will let us generate SSL certificates  
