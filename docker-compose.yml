@@ -8,6 +8,7 @@ services:
       - "8000"
     environment:
       - YOUR_ENV_VARIABLES_HERE
+      - VIRTUAL_HOST=aisurvivalmag.com,www.aisurvivalmag.com
     networks:
       - app-network
     init: true
