@@ -8,7 +8,6 @@ services:
       - "8000"
     environment:
       - YOUR_ENV_VARIABLES_HERE
-      - VIRTUAL_HOST=aisurvivalguide.com,www.aisurvivalguide.com
     networks:
       - app-network
     init: true
@@ -20,7 +19,7 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
       - /etc/letsencrypt:/etc/letsencrypt:ro  # Mount Let's Encrypt SSL certificates from the host
       - ./vhost.d:/etc/nginx/vhost.d
       - ./html:/usr/share/nginx/html
