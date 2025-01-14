@@ -27,7 +27,6 @@ services:
       - app-network
     depends_on:
       - backend
-    restart: always
 
   letsencrypt:
     image: jrcs/letsencrypt-nginx-proxy-companion
@@ -42,7 +41,6 @@ services:
       - nginx
     networks:
       - app-network
-    restart: always
 
 networks:
   app-network:
