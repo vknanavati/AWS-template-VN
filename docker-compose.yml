@@ -4,8 +4,8 @@ services:
   backend:
     build:
       context: ./backend
-    expose:
-      - "8000"
+    ports:
+      - "8000:8000"
     environment:
       - YOUR_ENV_VARIABLES_HERE
     networks:
@@ -27,6 +27,7 @@ services:
       - app-network
     depends_on:
       - backend
+    restart: always
 
   letsencrypt:
     image: jrcs/letsencrypt-nginx-proxy-companion
@@ -41,6 +42,7 @@ services:
       - nginx
     networks:
       - app-network
+    restart: always
 
 networks:
   app-network:
